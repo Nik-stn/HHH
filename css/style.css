@@ -59,7 +59,8 @@ ul {
 
 
 .container {
-    width: 1200px;
+    width: 100%;
+    max-width: 1200px;
     padding: 0 15px;
     margin: 0 auto;
 }
@@ -70,6 +71,10 @@ ul {
     justify-content: center;
     align-items: center;
     gap: 43px;
+}
+
+.menu__mobile {
+    display: none;
 }
 
 .menu__item a {
@@ -135,9 +140,9 @@ ul {
     height: 1129px;
     background-color: #1d1d1d;
     padding: 128px 0 271px;
-    background: url(../img/buildings__black.png) center 101% repeat-x,
-                url(../img/buildings__white.png) center 101% repeat-x,
-                #1d1d1d;
+    background: url(../img/buildings__black.png) center 100% repeat-x,
+        url(../img/buildings__white.png) center 100% repeat-x,
+        #1d1d1d;
     /* background-size: contain, contain; */
 }
 
@@ -274,7 +279,7 @@ ul {
     max-width: 335px;
 }
 
-.provide__item i{
+.provide__item i {
     color: #fff;
     font-size: 63px;
     width: 172px;
@@ -305,21 +310,12 @@ ul {
 }
 
 /* form */
-.contact {
-}
-
-.block__head {
-}
-
 .contact .block__title {
     padding-top: 95px;
 }
 
 .contact .block__text {
     padding-bottom: 64px;
-}
-
-.contact__inner {
 }
 
 .contact__icon-box {
@@ -339,9 +335,6 @@ ul {
     font-size: 21px;
 }
 
-.icon-phone {
-}
-
 .contact__text {
     font-family: 'HelveticaNeueLTProLt', sans-serif;
     font-size: 12px;
@@ -351,12 +344,12 @@ ul {
     margin-bottom: 12px;
 }
 
-.contact__text a{
+.contact__text a {
     color: #898888;
     transition: .2s;
 }
 
-.contact__text a:hover{
+.contact__text a:hover {
     color: #616161;
     text-decoration: underline;
 }
@@ -434,3 +427,130 @@ input.contact__button {
     margin-bottom: 29px;
 }
 
+/* media */
+@media screen and (max-width: 768px) {
+    .about {
+        height: auto;
+        padding-bottom: 200px;
+    }
+
+    .about__inner {
+        grid-gap: 30px;
+        grid-template-columns: max-content;
+    }
+
+    .team {
+        height: auto;
+    }
+
+    .team .block__title,
+    .provide .block__title {
+        padding-top: 100px;
+    }
+
+    .team .block__text,
+    .provide .block__text {
+        padding-bottom: 60px;
+    }
+
+    .team__inner,
+    .provide__inner {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 50px;
+    }
+
+    .team__item-img,
+    .team__item-text,
+    .team__icon-box,
+    .provide__item-text {
+        margin-bottom: 10px;
+    }
+
+    .provide {
+        padding-bottom: 0;
+    }
+
+    .provide__item i {
+        margin-bottom: 20px;
+    }
+
+    .provide__item-title {
+        margin-bottom: 15px;
+    }
+
+    .contact__form {
+        padding-top: 100px;
+    }
+
+    .footer {
+        padding-top: 30px;
+    }
+
+    @media screen and (max-width: 375px) {
+        .logo {
+            margin: 0;
+        }
+
+        .menu__desktop {
+            display: none;
+        }
+
+        .menu__mobile {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .menu__burger {
+            cursor: pointer;
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+            position: relative;
+        }
+
+        .menu__burger::after {
+            content: "";
+            position: absolute;
+            top: -10px;
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+        }
+
+        .menu__burger::before {
+            content: "";
+            position: absolute;
+            bottom: -10px;
+            width: 30px;
+            height: 3px;
+            background-color: #000;
+        }
+
+        .header__title {
+            margin: 100px 0 30px;
+        }
+
+        .header__button {
+            margin-bottom: 100px;
+        }
+
+        .about__item {
+            width: 300px;
+            height: 200px;
+        }
+
+        .contact .block__title, .contact__form {
+            padding-top: 60px;
+        }
+
+        .contact .block__text {
+            padding-bottom: 30px;
+        }
+    }
+}
